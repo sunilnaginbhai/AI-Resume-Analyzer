@@ -326,7 +326,6 @@ export const usePuterStore = create<PuterStore>((set, get) => {
             AIResponse | undefined
         >;
     };
-
     const feedback = async (path: string, message: string) => {
         const puter = getPuter();
         if (!puter) {
@@ -350,9 +349,10 @@ export const usePuterStore = create<PuterStore>((set, get) => {
                     ],
                 },
             ],
-            { model: "claude-sonnet-4" }
+            { model: "deepseek/deepseek-v4-flash" }
         ) as Promise<AIResponse | undefined>;
     };
+
 
     const img2txt = async (image: string | File | Blob, testMode?: boolean) => {
         const puter = getPuter();
